@@ -83,7 +83,10 @@ nmap <unique> <silent> ef :FilesystemExplorer<CR>
 " definition of ignore pattern
 set grepprg=grep\ -rnIH\ --exclude-dir=CVS\ --exclude-dir=.svn
 
+call pathogen#runtime_append_all_bundles()
+
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+au BufNewFile,BufRead *.cg,*.fx setf cg
 
 
 
