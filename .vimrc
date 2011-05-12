@@ -88,5 +88,20 @@ call pathogen#runtime_append_all_bundles()
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
 au BufNewFile,BufRead *.cg,*.fx setf cg
 
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
+" Unite.vim
+noremap <C-B> :Unite buffer<CR>
+noremap <C-F> :Unite -buffer-name=files file<CR>
+noremap <C-Z> :Unite file_mru<CR>
+
+aut FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+aut FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+
+aut FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+aut FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
